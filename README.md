@@ -25,7 +25,7 @@ parameters available at the instance level.
     module M
       include Paramix::Parametric
 
-      paramaterized do |params|
+      parameterized do |params|
         define_method :params do
           params
         end
@@ -37,7 +37,7 @@ parameters available at the instance level.
     end
 
     class X
-      include M[:name=>'Charlie']
+      include M[:name => 'Charlie']
     end
 
     X.new.hello  #=> 'Hello, Charlie!'
@@ -50,7 +50,7 @@ define a method and another parameter to define it's return value.
     module M
       include Paramix::Parametric
 
-      paramaterized do |params|
+      parameterized do |params|
         define_method params[:name] do
           params[:value]
         end
@@ -58,7 +58,7 @@ define a method and another parameter to define it's return value.
     end
 
     class X
-      include M[:name=>'foo', :value='bar']
+      include M[:name => 'foo', :value => 'bar']
     end
 
     X.new.foo  #=> 'bar'
